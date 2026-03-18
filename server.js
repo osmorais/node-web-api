@@ -17,6 +17,13 @@ import { DatabasePostgres } from './database-postgres.js'
 const server = fastify()
 const database = new DatabasePostgres()
 
+
+server.get('/', async (request, reply) => {
+    reply.write('opa');
+
+    return reply.status(201).send()
+})
+
 server.post('/videos', async (request, reply) => {
     const { title, description, duration} = request.body
 
