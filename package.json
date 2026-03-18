@@ -1,0 +1,22 @@
+{
+  "name": "1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "node --watch --no-warnings server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^5.8.2",
+    "postgres": "^3.4.8"
+  },
+  "devDependencies": {
+    "dotenv": "^17.3.1"
+  }
+}
