@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>osmorais SW 🚀</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: monospace;
+      background: #0d1117;
+      color: #00ff88;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: #00ffcc;
+    }
+
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 0 10px #00ff8844;
+    }
+
+    #terminal {
+      width: 90%;
+      max-width: 600px;
+      height: 200px;
+      background: black;
+      color: #00ff88;
+      padding: 10px;
+      overflow-y: auto;
+      border-radius: 10px;
+      border: 1px solid #00ff88;
+    }
+
+    button {
+      padding: 10px;
+      border: none;
+      background: #00ff88;
+      color: black;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #00cc66;
+    }
+
+    #fugir {
+      position: relative;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 cards na primeira linha */
+        gap: 61px;
+        width: 90%;
+        max-width: 1200px;
+        margin-top: 20px;
+    }
+
+    .terminal-card {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        align-items: center;
+    }
+
+    #terminal {
+        flex: 1;
+        width: 80%;
+        min-height: 200px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>💻 osmorais </h1>
+  <div class="grid">
+
+    <div class="card">
+      <h3>Hora atual</h3>
+      <p id="hora"></p>
+    </div>
+
+    <div class="card">
+      <h3> Status do servidor</h3>
+      <p id="status">🟢 SEM SERVIÇO</p>
+    </div>
+
+    <div class="card">
+      <h3>Deploy</h3>
+      <button onclick="deploy()">Fazer Deploy de Sexta🚀😈</button>
+    </div>
+
+    <div class="card">
+      <h3>Algum problema?</h3>
+      <button id="fugir">ABRIR CHAMADO!!💥​</button>
+    </div>
+
+    <div class="card terminal-card">
+      <h3>💻 Terminal</h3>
+      <div id="terminal"></div>
+    </div>
+
+  </div>
+
+  <script>
+    // relógio
+    setInterval(() => {
+      document.getElementById('hora').innerText = new Date().toLocaleTimeString()
+    }, 1000)
+
+    // botão que foge
+    const btn = document.getElementById('fugir')
+
+    btn.addEventListener('mouseover', () => {
+      btn.style.position = 'absolute'
+      btn.style.top = Math.random() * window.innerHeight + 'px'
+      btn.style.left = Math.random() * window.innerWidth + 'px'
+    })
+
+    // terminal fake
+    const terminal = document.getElementById('terminal')
+
+    function log(msg) {
+      const linha = document.createElement('div')
+      linha.innerText = msg
+      terminal.appendChild(linha)
+      terminal.scrollTop = terminal.scrollHeight
+    }
+
+    // logs iniciais
+    setTimeout(() => log('Iniciando sistema de qualquer jeito...'), 500)
+    setTimeout(() => log('Carregando módulos a força...'), 1000)
+    setTimeout(() => log('Conectando ao servidor cheio de gambiarra...'), 1500)
+    setTimeout(() => log('Sistema FORA DO AR ✅'), 2000)
+
+    // deploy fake
+    function deploy() {
+      log('🚀 Iniciando deploy NA SEXTA FEIRA????...')
+      setTimeout(() => log('🥵 Tem certeza? a gente faz segunda!...'), 1000)
+      setTimeout(() => log('😪 Buildando aplicação (Vai dar merda)...'), 2000)
+      setTimeout(() => log('🤬 Não vou subir essa tarefa hoje...'), 3000)
+      setTimeout(() => log('🔄 Enviando arquivos então né...'), 4000)
+      setTimeout(() => log('🔄 ...'), 4500)
+      setTimeout(() => log('🔄 ...'), 5500)
+      setTimeout(() => log('🔄 ...'), 6000)
+      setTimeout(() => log('🔄 ...'), 7000)
+      setTimeout(() => log('😑 Não desistiu ainda?...'), 8000)
+      setTimeout(() => log('🔄 ...'), 9500)
+      setTimeout(() => log('😈 Você que pediu...'), 10000)
+      setTimeout(() => log('🔄 ...'), 10500)
+      setTimeout(() => log('🔄 ...'), 11000)
+      setTimeout(() => log('✅ Todas tabelas do banco de dados apagadas com sucesso!...'), 11500)
+      setTimeout(() => log('✅ Deploy concluído!'), 12000)
+    }
+
+    // easter egg teclado
+    let segredo = 't'
+
+    window.addEventListener('keydown', (e) => {
+      segredo += e.key.toLowerCase()
+
+      if (segredo.includes('omj')) {
+        alert('😎 Modo secreto ativado!')
+        document.body.style.background = '#001f1f'
+      }
+    })
+  </script>
+
+</body>
+</html>

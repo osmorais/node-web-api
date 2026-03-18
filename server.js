@@ -13,15 +13,15 @@
 import { fastify } from 'fastify'
 // import { DatabaseMemory }from './database-memory.js'
 import { DatabasePostgres } from './database-postgres.js'
+import fastifyStatic from '@fastify/static'
+import path from 'path'
 
 const server = fastify()
 const database = new DatabasePostgres()
 
 
-server.get('/', async (request, reply) => {
-    reply.write('opa');
-
-    return reply.status(201).send()
+server.register(fastifyStatic, {
+    root: path.join(process.cwd(), 'public'),
 })
 
 server.post('/videos', async (request, reply) => {
